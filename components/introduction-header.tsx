@@ -12,7 +12,7 @@ export default function IntroductionHeader() {
     >
       <h1>
         <TextFadeIn
-          text="Simple Counter"
+          text="Counter++"
           className="text-3xl font-bold md:text-7xl"
         />
       </h1>

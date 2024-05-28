@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import { HiOutlineInformationCircle, HiOutlineXMark } from "react-icons/hi2";
+import { MdClose, MdSettings } from "react-icons/md";
 
 const variants = {
   open: { display: "flex", opacity: 1 },
@@ -27,7 +27,7 @@ export default function AboutModal() {
         whileHover={{ scale: 1.2 }}
         whileTap={{ scale: 0.8 }}
       >
-        <HiOutlineInformationCircle size={32} />
+        <MdSettings size={32} />
       </motion.button>
       {mounted
         ? createPortal(
@@ -45,7 +45,7 @@ export default function AboutModal() {
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.8 }}
               >
-                <HiOutlineXMark size={32} />
+                <MdClose size={32} />
               </motion.button>
             </motion.div>,
             document.body,
