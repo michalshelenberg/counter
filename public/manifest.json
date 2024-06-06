@@ -1,6 +1,6 @@
 {
-  "name": "Counterpp",
-  "short_name": "Counterpp",
+  "name": "counterpp",
+  "short_name": "counterpp",
   "icons": [
     {
       "src": "/icons/android-chrome-192x192.png",

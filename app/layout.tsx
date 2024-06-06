@@ -5,7 +5,7 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const APP_NAME = "Counterpp";
+const APP_NAME = "Counter++";
 const APP_DEFAULT_TITLE = "";
 const APP_TITLE_TEMPLATE = "";
 const APP_DESCRIPTION = "Simple counter completely free, without any ads";
@@ -13,7 +13,7 @@ const APP_DESCRIPTION = "Simple counter completely free, without any ads";
 export const metadata: Metadata = {
   applicationName: APP_NAME,
   title: {
-    default: APP_DEFAULT_TITLE,
+    default: APP_NAME,
     template: APP_TITLE_TEMPLATE,
   },
   description: APP_DESCRIPTION,
