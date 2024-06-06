@@ -8,6 +8,8 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Counter++",
   description: "Simple counter completely free, without any ads",
+  // PWA
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
