@@ -5,7 +5,7 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const APP_NAME = "Counter++";
+const APP_NAME = "Counterpp";
 const APP_DEFAULT_TITLE = "";
 const APP_TITLE_TEMPLATE = "";
 const APP_DESCRIPTION = "Simple counter completely free, without any ads";
