@@ -1,6 +1,6 @@
 {
-  "name": "My awesome PWA app",
-  "short_name": "PWA App",
+  "name": "Counter++",
+  "short_name": "Counter++",
   "icons": [
     {
       "src": "/icons/android-chrome-192x192.png",
@@ -27,8 +27,8 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#FFFFFF",
-  "background_color": "#FFFFFF",
+  "theme_color": "#000000",
+  "background_color": "#000000",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait"
