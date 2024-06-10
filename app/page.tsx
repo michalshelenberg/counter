@@ -1,10 +1,10 @@
 import Counter from "@/components/counter";
-import Navigation from "@/components/navigation";
+// import Navigation from "@/components/navigation";
 
 export default function Home() {
   return (
     <main>
-      <Navigation />
+      {/* <Navigation /> */}
       <Counter />
     </main>
   );
