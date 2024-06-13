@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.fossapki.counter.twa",
+      "sha256_cert_fingerprints": [
+        "76:80:C5:ED:5B:11:6E:9A:38:45:69:ED:2F:C0:6E:3F:5E:2F:EB:20:83:36:48:FC:63:E0:7B:3F:94:D4:E6:2A",
+        "8F:E3:79:5B:38:4F:A1:5F:A2:52:F7:E9:70:2B:86:B1:EB:E6:5F:0D:06:47:B3:BF:95:80:A1:29:4D:0F:12:9A"
+      ]
+    }
+  }
+]
