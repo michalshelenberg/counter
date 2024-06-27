@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { LayoutGrid, Rows3, Square } from "lucide-react";
 import { useEffect, useState } from "react";
 import { HiMinus, HiPlus } from "react-icons/hi2";
+import { MdRefresh } from "react-icons/md";
 
 function SoloView() {
   const [count, setCount] = useState(0);
@@ -24,6 +25,11 @@ function SoloView() {
     localStorage.setItem("count", (count - 1).toString());
   };
 
+  const reset = () => {
+    setCount(0);
+    localStorage.setItem("count", "0");
+  };
+
   return (
     <motion.div
       whileTap={"tap"}
@@ -31,9 +37,12 @@ function SoloView() {
     >
       <div className="relative flex h-full flex-col">
         <div className="absolute right-0 top-0 flex flex-row gap-3 p-6">
-          <div className="h-8 w-24 rounded-full bg-white"></div>
-          <div className="h-8 w-8 rounded-full bg-white"></div>
-          <div className="h-8 w-8 rounded-full bg-white"></div>
+          {/* <div className="h-8 w-24 rounded-full bg-white"></div>
+          <div className="h-8 w-8 rounded-full bg-white"></div> */}
+          {/* rounded-full bg-[#1E1E1E] p-3 */}
+          <button onClick={reset} className="text-white">
+            <MdRefresh size={32} />
+          </button>
         </div>
         <div
           onClick={increment}
@@ -113,21 +122,21 @@ export default function Page() {
 
   return (
     <>
-    <IntroductionHeader />
-    <main className="flex h-dvh select-none flex-col items-center gap-3 bg-black p-3">
-      <div className="flex flex-row gap-3">
-        {TABS.map(({ label, icon }, index) => (
-          <button
-            onClick={() => setActiveTab(index)}
-            key={label}
-            className="rounded-full bg-[#1E1E1E] p-3 text-white"
-          >
-            {icon}
-          </button>
-        ))}
-      </div>
-      {TABS[activeTab].content}
-    </main>
+      <IntroductionHeader />
+      <main className="flex h-dvh select-none flex-col items-center gap-3 bg-black p-3">
+        <div className="flex flex-row gap-3">
+          {TABS.map(({ label, icon }, index) => (
+            <button
+              onClick={() => setActiveTab(index)}
+              key={label}
+              className="rounded-full bg-[#1E1E1E] p-3 text-white"
+            >
+              {icon}
+            </button>
+          ))}
+        </div>
+        {TABS[activeTab].content}
+      </main>
     </>
   );
 }
