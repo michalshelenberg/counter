@@ -7,12 +7,30 @@ import { useEffect, useState } from "react";
 import { HiMinus, HiPlus } from "react-icons/hi2";
 import { MdRefresh } from "react-icons/md";
 
+const COLORS = [
+  "fill-[#1E1E1E]",
+  "fill-indigo-600",
+  "fill-rose-600",
+  "fill-lime-600",
+];
+
+const BG_COLORS = [
+  "bg-[#1E1E1E]",
+  "bg-indigo-600",
+  "bg-rose-600",
+  "bg-lime-600",
+];
+
 function SoloView() {
   const [count, setCount] = useState(0);
+  const [color, setColor] = useState(0);
 
   useEffect(() => {
-    const localState = parseInt(localStorage.getItem("count") || "0");
-    setCount(localState);
+    const localCount = parseInt(localStorage.getItem("count") || "0");
+    const localColor = parseInt(localStorage.getItem("color") || "0");
+
+    setCount(localCount);
+    setColor(localColor);
   }, []);
 
   const increment = () => {
@@ -30,17 +48,23 @@ function SoloView() {
     localStorage.setItem("count", "0");
   };
 
+  const changeColor = () => {
+    const newColor = color < COLORS.length - 1 ? color + 1 : 0;
+    setColor(newColor);
+    localStorage.setItem("color", newColor.toString());
+  };
+
   return (
     <motion.div
       whileTap={"tap"}
-      className="flex aspect-video h-full w-auto max-w-full cursor-pointer flex-col rounded-[32px] bg-[#171717] shadow-[0px_0px_0px_0px_rgba(0,0,0,0.25)]"
+      className={`${BG_COLORS[color]} flex aspect-video h-full w-auto max-w-full cursor-pointer flex-col rounded-[32px] shadow-[0px_0px_0px_0px_rgba(0,0,0,0.25)] transition duration-300`}
     >
       <div className="relative flex h-full flex-col">
-        <div className="absolute right-0 top-0 flex flex-row gap-3 p-6">
-          {/* <div className="h-8 w-24 rounded-full bg-white"></div>
-          <div className="h-8 w-8 rounded-full bg-white"></div> */}
-          {/* rounded-full bg-[#1E1E1E] p-3 */}
-          <button onClick={reset} className="text-white">
+        <div className="absolute right-0 top-0 flex flex-row gap-6 p-6">
+          <button className="rounded-full text-white">
+            <Square onClick={changeColor} size={32} className={COLORS[color]} />
+          </button>
+          <button onClick={reset} className="rounded-full text-white">
             <MdRefresh size={32} />
           </button>
         </div>
