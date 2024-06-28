@@ -7,19 +7,7 @@ import { useEffect, useState } from "react";
 import { HiMinus, HiPlus } from "react-icons/hi2";
 import { MdRefresh } from "react-icons/md";
 
-const COLORS = [
-  "fill-[#1E1E1E]",
-  "fill-indigo-600",
-  "fill-rose-600",
-  "fill-lime-600",
-];
-
-const BG_COLORS = [
-  "bg-[#1E1E1E]",
-  "bg-indigo-600",
-  "bg-rose-600",
-  "bg-lime-600",
-];
+const COLORS = ["bg-[#1E1E1E]", "bg-indigo-600", "bg-rose-600", "bg-lime-600"];
 
 function SoloView() {
   const [count, setCount] = useState(0);
@@ -57,12 +45,12 @@ function SoloView() {
   return (
     <motion.div
       whileTap={"tap"}
-      className={`${BG_COLORS[color]} flex aspect-video h-full w-auto max-w-full cursor-pointer flex-col rounded-[32px] shadow-[0px_0px_0px_0px_rgba(0,0,0,0.25)] transition duration-300`}
+      className={`${COLORS[color]} flex aspect-video h-full w-auto max-w-full cursor-pointer flex-col rounded-[32px] shadow-[0px_0px_0px_0px_rgba(0,0,0,0.25)] transition duration-300`}
     >
       <div className="relative flex h-full flex-col">
         <div className="absolute right-0 top-0 flex flex-row gap-6 p-6">
           <button className="rounded-full text-white">
-            <Square onClick={changeColor} size={32} className={COLORS[color]} />
+            <Square onClick={changeColor} size={32} />
           </button>
           <button onClick={reset} className="rounded-full text-white">
             <MdRefresh size={32} />
