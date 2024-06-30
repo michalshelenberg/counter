@@ -3,7 +3,7 @@
 import TextFadeIn from "@/components/text-fade-in";
 import { motion } from "framer-motion";
 
-export default function Introduction() {
+export default function Welcome() {
   return (
     <motion.div
       animate={{ opacity: 0, transitionEnd: { display: "none" } }}
