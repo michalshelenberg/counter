@@ -41,7 +41,7 @@ export default function Page() {
   };
 
   return (
-    <main className="flex h-dvh select-none flex-col items-center gap-3 bg-black p-3">
+    <main className="flex h-dvh flex-col items-center gap-3 p-3">
       <div className="flex flex-row gap-3">
         {TABS.map(({ label, icon }, index) => (
           <button
